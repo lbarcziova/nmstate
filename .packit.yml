@@ -9,6 +9,9 @@ actions:
     - "sh -c 'echo nmstate-$(python3 setup.py --version).tar.gz'"
   get-current-version:
     - "python3 setup.py --version"
+srpm_build_deps:
+  - python3-pip
+  - python3-setuptools_scm
 jobs:
   - job: copr_build
     trigger: pull_request
